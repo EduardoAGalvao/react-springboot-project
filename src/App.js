@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Tabela from './dentista/TabelaDentista'
 import Formulario from './dentista/FormularioDentista'
@@ -11,6 +10,7 @@ class App extends Component {
     dentistas: []
   };
 
+  //Método para carregar todos os dentistas assim que a aplicação for montada
   componentDidMount(){
     axios.get('http://localhost:8080/odonto/dentistas')
       .then((res) => {
@@ -19,10 +19,25 @@ class App extends Component {
       })
   }
 
+  enviarDados = (dentista) =>{
+
+    axios.post('http://localhost:8080/odonto/dentistas', dentista)
+    .then((res) => {
+
+      const newState = [...this.state.dentistas, res.data]
+
+      this.setState({
+        dentistas: newState
+      })
+      
+    });
+
+  }
+
   render(){
     return (
       <div>
-        <Formulario />
+        <Formulario enviarDados={this.enviarDados}/>
         <Tabela listaDentistas={this.state.dentistas} />
       </div>
     );
