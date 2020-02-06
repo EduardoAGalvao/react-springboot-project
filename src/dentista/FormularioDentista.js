@@ -37,13 +37,7 @@ class FormularioDentista extends Component{
 
         this.props.enviarDados(this.state);
 
-        this.setState({
-            codigo: '',
-            nome: '',
-            cro: '',
-            email: '',
-            telefone: ''
-        })
+        this.setState(this.stateInicial);
 
     }
 
@@ -68,7 +62,7 @@ class FormularioDentista extends Component{
                 <label htmlFor="email">Email:</label>
                 <input type="text" id="email" name="email" value={email} onChange={this.inputHandler}/>
 
-                <button type="submit" onClick={this.submitHandler}>Gravar</button>
+                <button type="submit"  className="btn btn-success" onClick={this.submitHandler}>Gravar</button>
 
             </form>
         );

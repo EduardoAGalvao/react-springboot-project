@@ -3,6 +3,7 @@ import './App.css';
 import Tabela from './dentista/TabelaDentista'
 import Formulario from './dentista/FormularioDentista'
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
 

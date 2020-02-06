@@ -21,8 +21,8 @@ const TableBody = (props) => {
                 <td>{dentista.codigo}</td>
                 <td>{dentista.nome}</td>
                 <td>{dentista.telefone}</td>
-                <td><button>Editar</button></td>
-                <td><button>Excluir</button></td>
+                <td><button className="btn btn-warning">Editar</button></td>
+                <td><button className="btn btn-danger">Excluir</button></td>
             </tr>
         )
     })
@@ -44,7 +44,7 @@ class TabelaDentista extends Component {
         console.log(listaDentistas)
 
         return (
-            <table>
+            <table className="table table-hover">
                 <TableHead />
                 <TableBody dentistas={listaDentistas}/>
             </table>
