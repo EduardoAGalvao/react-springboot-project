@@ -46,25 +46,33 @@ class FormularioDentista extends Component{
         const {codigo, nome, cro, telefone, email} = this.state;
         
         return(
-            <form>
-                <label htmlFor="codigo">Código:</label>
-                <input type="text" id="codigo" name="codigo" value={codigo} onChange={this.inputHandler}/>
+            <div className="card">
+                <div className="card-header">
+                    <h5>Cadastro de dentistas</h5>
+                </div>
+                <div className="card-body">
+                    <div className="form-group">
+                        <form>
+                            <label htmlFor="codigo">Código:</label>
+                            <input className="form-control" type="text" id="codigo" name="codigo" value={codigo} onChange={this.inputHandler}/>
 
-                <label htmlFor="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" value={nome} onChange={this.inputHandler}/>
+                            <label htmlFor="nome">Nome:</label>
+                            <input className="form-control" type="text" id="nome" name="nome" value={nome} onChange={this.inputHandler}/>
 
-                <label htmlFor="cro">CRO:</label>
-                <input type="text" id="cro" name="cro" value={cro} onChange={this.inputHandler}/>
+                            <label htmlFor="cro">CRO:</label>
+                            <input className="form-control" type="text" id="cro" name="cro" value={cro} onChange={this.inputHandler}/>
 
-                <label htmlFor="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone" value={telefone} onChange={this.inputHandler}/>
+                            <label htmlFor="telefone">Telefone:</label>
+                            <input className="form-control" type="text" id="telefone" name="telefone" value={telefone} onChange={this.inputHandler}/>
 
-                <label htmlFor="email">Email:</label>
-                <input type="text" id="email" name="email" value={email} onChange={this.inputHandler}/>
+                            <label htmlFor="email">Email:</label>
+                            <input className="form-control" type="text" id="email" name="email" value={email} onChange={this.inputHandler}/>
 
-                <button type="submit"  className="btn btn-success" onClick={this.submitHandler}>Gravar</button>
-
-            </form>
+                            <button type="submit"  className="btn btn-success form-control mt-5" onClick={this.submitHandler}>Gravar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
